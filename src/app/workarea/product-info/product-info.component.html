@@ -1,0 +1,51 @@
+<div style="border: 1px solid; height: 84vh;">
+  <div class="card-container">
+    <div *ngFor="let item of list; let i = index;">
+      <div *ngIf="item.selected== true">
+        <button class="card card-small selectval" tabindex=i (click)="perform(item, i)">
+          <span>{{item.name}}</span>
+        </button>
+      </div>
+      <div *ngIf="item.selected== false">
+        <button class="card card-small" tabindex=i (click)="perform(item, i)">
+          <span>{{item.name}}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div style="width:90%;margin-left: 5%;border: 1px solid lightgrey;height: 60vh;" *ngIf="selTabVal== 'Basic Data'">
+    <div class="labVal">
+      <mat-label>Part Title:</mat-label>
+      <mat-label></mat-label>
+    </div>
+    <div class="labVal">
+      <mat-label>Part Description:</mat-label>
+      <mat-label></mat-label>
+    </div>
+    <div class="labVal">
+      <mat-label>Part Number:</mat-label>
+      <mat-label></mat-label>
+    </div>
+    <div class="labVal">
+      <mat-label>SKU:</mat-label>
+      <mat-label></mat-label>
+    </div>
+  </div>
+  <div style="width:90%;margin-left: 5%;border: 1px solid lightgrey;height: 60vh;" *ngIf="selTabVal== 'Assets'">
+    <span>Assets</span>
+  </div>
+  <div style="width:90%;margin-left: 5%;border: 1px solid lightgrey;height: 60vh;" *ngIf="selTabVal== 'Technical Info'">
+    <span>Technical Info</span>
+  </div>
+  <div style="width:90%;margin-left: 5%;border: 1px solid lightgrey;height: 60vh;" *ngIf="selTabVal== 'Marketing Info'">
+    <span>Marketing Info</span>
+  </div>
+  <div style="width:90%;margin-left: 5%;border: 1px solid lightgrey;height: 60vh;" *ngIf="selTabVal== 'Sales Info'">
+    <span>Sales Info</span>
+  </div>
+  <div style="width:90%;margin-left: 5%;border: 1px solid lightgrey;height: 60vh;" *ngIf="selTabVal== 'Design Info'">
+    <span>Design Info</span>
+  </div>
+
+</div>
